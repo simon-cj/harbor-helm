@@ -8,7 +8,7 @@ expose:
     # is disabled, the port must be included in the command when pull/push
     # images. Refer to https://github.com/goharbor/harbor/issues/5291
     # for the detail.
-    enabled: true
+    enabled: false
     # Fill the name of secret if you want to use your own TLS certificate.
     # The secret contains keys named:
     # "tls.crt" - the certificate (required)
@@ -355,7 +355,7 @@ proxy:
 # If expose the service via "ingress", the Nginx will not be used
 nginx:
   image:
-    repository: goharbor/nginx-photon
+    repository: cargo.dev.caicloud.xyz/release/nginx-photon
     tag: v2.0.2
   # set the service account to be used, default if left empty
   serviceAccountName: ""
@@ -372,7 +372,7 @@ nginx:
 
 portal:
   image:
-    repository: goharbor/harbor-portal
+    repository: cargo.dev.caicloud.xyz/release/harbor-portal
     tag: v2.0.2
   # set the service account to be used, default if left empty
   serviceAccountName: ""
@@ -389,7 +389,7 @@ portal:
 
 core:
   image:
-    repository: goharbor/harbor-core
+    repository: cargo.dev.caicloud.xyz/release/harbor-core
     tag: v2.0.2
   # set the service account to be used, default if left empty
   serviceAccountName: ""
@@ -422,7 +422,7 @@ core:
 
 jobservice:
   image:
-    repository: goharbor/harbor-jobservice
+    repository: cargo.dev.caicloud.xyz/release/harbor-jobservice
     tag: v2.0.2
   replicas: 1
   # set the service account to be used, default if left empty
@@ -449,7 +449,7 @@ registry:
   serviceAccountName: ""
   registry:
     image:
-      repository: goharbor/registry-photon
+      repository: cargo.dev.caicloud.xyz/release/registry-photon
       tag: v2.0.2
     # resources:
     #  requests:
@@ -457,7 +457,7 @@ registry:
     #    cpu: 100m
   controller:
     image:
-      repository: goharbor/harbor-registryctl
+      repository: cargo.dev.caicloud.xyz/release/harbor-registryctl
       tag: v2.0.2
 
     # resources:
@@ -506,7 +506,7 @@ chartmuseum:
   # Harbor defaults ChartMuseum to returning relative urls, if you want using absolute url you should enable it by change the following value to 'true'
   absoluteUrl: false
   image:
-    repository: goharbor/chartmuseum-photon
+    repository: cargo.dev.caicloud.xyz/release/chartmuseum-photon
     tag: v2.0.2
   replicas: 1
   # resources:
@@ -525,7 +525,7 @@ clair:
   serviceAccountName: ""
   clair:
     image:
-      repository: goharbor/clair-photon
+      repository: cargo.dev.caicloud.xyz/release/clair-photon
       tag: v2.0.2
     # resources:
     #  requests:
@@ -533,7 +533,7 @@ clair:
     #    cpu: 100m
   adapter:
     image:
-      repository: goharbor/clair-adapter-photon
+      repository: cargo.dev.caicloud.xyz/release/clair-adapter-photon
       tag: v2.0.2
     # resources:
     #  requests:
@@ -554,7 +554,7 @@ trivy:
   enabled: true
   image:
     # repository the repository for Trivy adapter image
-    repository: goharbor/trivy-adapter-photon
+    repository: cargo.dev.caicloud.xyz/release/trivy-adapter-photon
     # tag the tag for Trivy adapter image
     tag: v2.0.2
   # set the service account to be used, default if left empty
@@ -609,7 +609,7 @@ notary:
     # set the service account to be used, default if left empty
     serviceAccountName: ""
     image:
-      repository: goharbor/notary-server-photon
+      repository: cargo.dev.caicloud.xyz/release/notary-server-photon
       tag: v2.0.2
     replicas: 1
     # resources:
@@ -620,7 +620,7 @@ notary:
     # set the service account to be used, default if left empty
     serviceAccountName: ""
     image:
-      repository: goharbor/notary-signer-photon
+      repository: cargo.dev.caicloud.xyz/release/notary-signer-photon
       tag: v2.0.2
     replicas: 1
     # resources:
@@ -648,7 +648,7 @@ database:
     # set the service account to be used, default if left empty
     serviceAccountName: ""
     image:
-      repository: goharbor/harbor-db
+      repository: cargo.dev.caicloud.xyz/release/harbor-db
       tag: v2.0.2
     # The initial superuser password for internal database
     password: "changeit"
@@ -694,7 +694,7 @@ redis:
     # set the service account to be used, default if left empty
     serviceAccountName: ""
     image:
-      repository: goharbor/redis-photon
+      repository: cargo.dev.caicloud.xyz/release/redis-photon
       tag: v2.0.2
     # resources:
     #  requests:
